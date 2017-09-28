@@ -9,6 +9,7 @@ namespace WebAppCinemaProva.Models.Cinema
     {
         public int IngressoId { get; set; }
         public Tipo Tipo { get; set; }
-        public List<Sessao> Sessao { get; set; }
+        public int SessaoId { get; set; }
+        public Sessao Sessao { get; set; }
     }
 }

@@ -12,8 +12,7 @@ namespace WebAppCinemaProva.Models.Cinema
         public DateTime DataHoraFim { get; set; }
         public decimal ValorInteira { get; set; }
         public bool Encerrada { get; set; }
-        public  int IngressoId { get; set; }
-        public Ingresso Ingresso { get; set; }
+        public List<Ingresso> Ingresso { get; set; }
         public int FilmeId { get; set; }
         public Filme Filme { get; set; }
         public int SalaId { get; set; }
