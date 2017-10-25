@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
+using WebAppCinemaProva.Configution;
 
 namespace WebAppCinemaProva.Models.Cinema
 {
@@ -25,8 +26,10 @@ namespace WebAppCinemaProva.Models.Cinema
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Properties<int>().Where(c => c.Name == c.ReflectedType + "Id").Configure(c => c.IsKey());
-            modelBuilder.Properties<string>().Configure(c => c.HasMaxLength(150));
+            modelBuilder.Conventions.Add<EntityConvention>();
+
+            modelBuilder.Configurations.Add(new SalaMapConfig());
+            modelBuilder.Configurations.Add(new SessaoMapConfig());
         }
     }
 }

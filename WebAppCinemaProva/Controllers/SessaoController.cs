@@ -49,7 +49,7 @@ namespace WebAppCinemaProva.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SessaoId,DataHoraInicio,DataHoraFim,ValorInteira,Encerrada,FilmeId,SalaId")] Sessao sessao)
+        public ActionResult Create(Sessao sessao)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +59,6 @@ namespace WebAppCinemaProva.Controllers
             }
 
             ViewBag.FilmeId = new SelectList(db.FIlmes, "FilmeId", "Titulo", sessao.FilmeId);
-            ViewBag.SalaId = new SelectList(db.Salas, "SalaId", "Descricao", sessao.SalaId);
             return View(sessao);
         }
 
@@ -76,7 +75,6 @@ namespace WebAppCinemaProva.Controllers
                 return HttpNotFound();
             }
             ViewBag.FilmeId = new SelectList(db.FIlmes, "FilmeId", "Titulo", sessao.FilmeId);
-            ViewBag.SalaId = new SelectList(db.Salas, "SalaId", "Descricao", sessao.SalaId);
             return View(sessao);
         }
 
@@ -85,7 +83,7 @@ namespace WebAppCinemaProva.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "SessaoId,DataHoraInicio,DataHoraFim,ValorInteira,Encerrada,FilmeId,SalaId")] Sessao sessao)
+        public ActionResult Edit(Sessao sessao)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +92,6 @@ namespace WebAppCinemaProva.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.FilmeId = new SelectList(db.FIlmes, "FilmeId", "Titulo", sessao.FilmeId);
-            ViewBag.SalaId = new SelectList(db.Salas, "SalaId", "Descricao", sessao.SalaId);
             return View(sessao);
         }
 
