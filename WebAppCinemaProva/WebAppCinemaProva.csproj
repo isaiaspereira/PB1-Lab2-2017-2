@@ -211,6 +211,7 @@
     <Compile Include="Models\Cinema\CinemaContext.cs" />
     <Compile Include="Models\Cinema\Filme.cs" />
     <Compile Include="Models\Cinema\Ingresso.cs" />
+    <Compile Include="Models\Cinema\Localizacao.cs" />
     <Compile Include="Models\Cinema\Sala.cs" />
     <Compile Include="Models\Cinema\Sessao.cs" />
     <Compile Include="Models\Cinema\Tipo.cs" />

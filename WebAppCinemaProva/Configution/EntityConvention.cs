@@ -15,6 +15,8 @@ namespace WebAppCinemaProva.Configution
             Properties().Where(c => c.Name == "DataCadastro").Configure(c => c.HasColumnType("dateTime2"));
 
             Properties<string>().Configure(c => c.HasMaxLength(150));
+
+            Properties<string>().Where(w => w.Name == "UF").Configure(c => c.HasMaxLength(2));
         }
     }
 }

@@ -26,6 +26,10 @@ namespace WebAppCinemaProva.Configution
             HasOptional(c => c.Sessao)
              .WithRequired(c => c.Sala)
              .WillCascadeOnDelete(true);
+
+            HasOptional(s => s.Localizacao)
+                .WithRequired(c => c.Sala)
+                .WillCascadeOnDelete(true);
         }
     }
 }

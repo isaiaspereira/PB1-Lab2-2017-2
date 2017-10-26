@@ -12,5 +12,7 @@ namespace WebAppCinemaProva.Models.Cinema
         public int Capacidade { get; set; }
         public string Descricao { get; set; }
         public virtual Sessao Sessao { get; set; }
+
+        public virtual Localizacao Localizacao { get; set; }
     }
 }
